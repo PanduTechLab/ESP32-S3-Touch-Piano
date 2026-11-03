@@ -8,11 +8,11 @@ Features real-time additive sine synthesis, an 8-voice polyphonic audio engine, 
 
 ## 📸 System Schematics & Architecture
 
-### 🔌 Circuit Diagram (Mode 2)
-![Circuit Diagram](Touch_Piano_Mode2_All_In_One/circuit_diagram.svg)
+### 🔌 Circuit Diagram (Version 2)
+![Circuit Diagram](Version_2/circuit_diagram.svg)
 
 ### 🧩 System Block Diagram
-![Block Diagram](Touch_Piano_Mode2_All_In_One/block_diagram.svg)
+![Block Diagram](Version_2/block_diagram.svg)
 
 ---
 
@@ -25,7 +25,7 @@ ESP32-S3-Touch-Piano/
 ├── README.md                                    # Overall project guide & specifications
 ├── .gitignore                                   # Git ignore rules
 │
-├── Touch_Piano_Mode1_Individual_Octaves/         # MODE 1: 7 Separate Octave Sketches
+├── Version_1/                                   # VERSION 1: 7 Separate Octave Sketches
 │   ├── piano_octave1/piano_octave1.ino          # Octave 1: C1 to C2 (32.70 Hz - 65.41 Hz)
 │   ├── piano_octave2/piano_octave2.ino          # Octave 2: C2 to C3 (65.41 Hz - 130.81 Hz)
 │   ├── piano_octave3/piano_octave3.ino          # Octave 3: C3 to C4 (130.81 Hz - 261.63 Hz)
@@ -33,17 +33,17 @@ ESP32-S3-Touch-Piano/
 │   ├── piano_octave5/piano_octave5.ino          # Octave 5: C5 to C6 (523.25 Hz - 1046.50 Hz)
 │   ├── piano_octave6/piano_octave6.ino          # Octave 6: C6 to C7 (1046.50 Hz - 2093.00 Hz)
 │   ├── piano_octave7/piano_octave7.ino          # Octave 7: C7 to C8 (2093.00 Hz - 4186.01 Hz)
-│   ├── circuit_diagram.svg                      # Mode 1 wiring diagram
-│   ├── block_diagram.svg                        # Mode 1 architecture
-│   └── README.md                                # Mode 1 detailed documentation
+│   ├── circuit_diagram.svg                      # Version 1 wiring diagram
+│   ├── block_diagram.svg                        # Version 1 architecture
+│   └── README.md                                # Version 1 detailed documentation
 │
-└── Touch_Piano_Mode2_All_In_One/                 # MODE 2: Unified Multi-Octave Engine
+└── Version_2/                                   # VERSION 2: Unified Multi-Octave Engine
     ├── piano_all_octaves_touch_select.ino       # Single firmware with all 7 octaves
     ├── piano_all_octaves_touch_select/          # Arduino IDE compatible sketch folder
     │   └── piano_all_octaves_touch_select.ino
-    ├── circuit_diagram.svg                      # Mode 2 wiring diagram (GPIO 7 Octave Switch)
-    ├── block_diagram.svg                        # Mode 2 FSM architecture
-    └── README.md                                # Mode 2 detailed documentation
+    ├── circuit_diagram.svg                      # Version 2 wiring diagram (GPIO 7 Octave Switch)
+    ├── block_diagram.svg                        # Version 2 FSM architecture
+    └── README.md                                # Version 2 detailed documentation
 ```
 
 ### 🎵 Mode 1: Individual Octave Sketches (7 Separate Codes)
@@ -146,14 +146,14 @@ Standard equal temperament ($A_4 = 440\text{ Hz}$):
 | **7** | **B** | 61.74 Hz | 123.47 Hz | 246.94 Hz | **493.88 Hz** | 987.77 Hz | 1975.53 Hz | 3951.07 Hz |
 | **8** | **High C** | 65.41 Hz | 130.81 Hz | 261.63 Hz | **523.25 Hz** | 1046.50 Hz | 2093.00 Hz | 4186.01 Hz |
 
-![Piano Frequency Chart](Touch_Piano_Mode2_All_In_One/Piano%20frequency%20chart%20.png)
+![Piano Frequency Chart](Version_2/Piano%20frequency%20chart%20.png)
 
 ---
 
 ## 🔊 Speaker Acoustic Analysis & Amplifier Gain Recommendations
 
 ### 1. Speaker Frequency Response (CS 69 4W)
-![Speaker Frequency Response](Touch_Piano_Mode2_All_In_One/Frequency%20Response.png)
+![Speaker Frequency Response](Version_2/Frequency%20Response.png)
 
 The sound pressure level (SPL) vs. frequency curve of our **CS 69 4W** speaker reveals three clear acoustic bands:
 - **Sub-Bass & Bass (< 200 Hz):** SPL is naturally low (**55 dB to 72 dB**) due to the small cone size and lack of an acoustic resonant enclosure. In our firmware, an added 2nd harmonic ($H_2 = 0.35 - 0.40$) generates a psychoacoustic virtual pitch so bass notes are clearly heard.
@@ -161,7 +161,7 @@ The sound pressure level (SPL) vs. frequency curve of our **CS 69 4W** speaker r
 - **High Treble (3 kHz – 10 kHz):** Strong output (**90 dB to 100 dB**), rolling off smoothly above 12 kHz.
 
 ### 2. MAX98357A Amplifier Gain Configuration
-![Amplifier Gain Settings](Touch_Piano_Mode2_All_In_One/gain.png)
+![Amplifier Gain Settings](Version_2/gain.png)
 
 | GAIN Pin Wiring | Voltage Gain | Effective Multiplier | Characteristics |
 |---|:---:|:---:|---|
@@ -187,9 +187,9 @@ The sound pressure level (SPL) vs. frequency curve of our **CS 69 4W** speaker r
 1. Install the [Arduino IDE](https://www.arduino.cc/en/software).
 2. Install the **ESP32 Board Package (v3.x)** in Boards Manager (`esp32 by Espressif Systems`).
 3. Select Board: **ESP32S3 Dev Module**.
-4. Open your chosen mode:
-   - **Mode 1:** Open any sketch folder in `Touch_Piano_Mode1_Individual_Octaves/` (e.g. `piano_octave4/piano_octave4.ino`).
-   - **Mode 2:** Open `Touch_Piano_Mode2_All_In_One/piano_all_octaves_touch_select.ino`.
+4. Open your chosen version:
+   - **Version 1:** Open any sketch folder in `Version_1/` (e.g. `piano_octave4/piano_octave4.ino`).
+   - **Version 2:** Open `Version_2/piano_all_octaves_touch_select.ino`.
 5. Connect your ESP32-S3 via USB and select the COM port.
 6. Click **Upload** and open Serial Monitor at **115200 baud**!
 
