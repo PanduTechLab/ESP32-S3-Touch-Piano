@@ -199,8 +199,8 @@ The sound pressure level (SPL) vs. frequency curve of our **CS 69 4W** speaker r
 
 If you enjoyed this project or found it helpful, please consider starring ⭐ this repository and subscribing for more DIY electronics tutorials and hardware builds:
 
-- ▶️ **YouTube Channel:** [@anduTechLab](https://youtube.com/@pandustechlab)
-- 📸 **Instagram:** [@pandutechlab](https://www.instagram.com/pandutechlab/)
+- ▶️ **YouTube Channel:** [@PanduTechLab](https://youtube.com/@pandustechlab)
+- 📸 **Instagram:** [@Pandutechlab](https://www.instagram.com/pandutechlab/)
 - 🐙 **GitHub:** [@PanduTechLab](https://github.com/PanduTechLab)
 
 ---
