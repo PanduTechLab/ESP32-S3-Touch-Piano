@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="660" viewBox="0 0 1120 660">
+  <rect x="2" y="2" width="1116" height="656" rx="12" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="560" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold" font-family="Arial, Helvetica, sans-serif">ESP32-S3 Touch Piano - Mode 1 Circuit Diagram (8 Diatonic Keys)</text>
+  <text x="560" y="52" font-size="12" text-anchor="middle" fill="#4B5563" font-family="Arial, Helvetica, sans-serif">Standard 8-Key Piano Octave (C to High C) &amp; MAX98357A I2S Audio Amplifier</text>
+
+  <!-- Power Bus Rails -->
+  <line x1="30" y1="80" x2="30" y2="580" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="32" y="74" font-size="11" text-anchor="middle" fill="#DC2626" font-weight="bold" font-family="Arial, Helvetica, sans-serif">3V3</text>
+
+  <line x1="12" y1="95" x2="12" y2="600" stroke="#1F2937" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="12" y="74" font-size="11" text-anchor="middle" fill="#1F2937" font-weight="bold" font-family="Arial, Helvetica, sans-serif">GND</text>
+
+  <!-- 8 TTP223 Touch Sensors -->
+  <!-- Key 1: Note C (GPIO 15) -->
+  <rect x="50" y="85" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="104" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 1: Note C</text>
+  <text x="137" y="119" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Root Tonic</text>
+  <line x1="30" y1="98" x2="50" y2="98" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="98" r="3" fill="#DC2626"/>
+  <line x1="12" y1="112" x2="50" y2="112" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="112" r="3" fill="#1F2937"/>
+  <line x1="225" y1="106" x2="380" y2="106" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="106" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="106" r="3" fill="#0D9488"/>
+
+  <!-- Key 2: Note D (GPIO 16) -->
+  <rect x="50" y="145" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="164" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 2: Note D</text>
+  <text x="137" y="179" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">2nd Degree</text>
+  <line x1="30" y1="158" x2="50" y2="158" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="158" r="3" fill="#DC2626"/>
+  <line x1="12" y1="172" x2="50" y2="172" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="172" r="3" fill="#1F2937"/>
+  <line x1="225" y1="166" x2="380" y2="166" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="166" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="166" r="3" fill="#0D9488"/>
+
+  <!-- Key 3: Note E (GPIO 17) -->
+  <rect x="50" y="205" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="224" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 3: Note E</text>
+  <text x="137" y="239" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Major 3rd</text>
+  <line x1="30" y1="218" x2="50" y2="218" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="218" r="3" fill="#DC2626"/>
+  <line x1="12" y1="232" x2="50" y2="232" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="232" r="3" fill="#1F2937"/>
+  <line x1="225" y1="226" x2="380" y2="226" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="226" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="226" r="3" fill="#0D9488"/>
+
+  <!-- Key 4: Note F (GPIO 18) -->
+  <rect x="50" y="265" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="284" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 4: Note F</text>
+  <text x="137" y="299" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Perfect 4th</text>
+  <line x1="30" y1="278" x2="50" y2="278" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="278" r="3" fill="#DC2626"/>
+  <line x1="12" y1="292" x2="50" y2="292" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="292" r="3" fill="#1F2937"/>
+  <line x1="225" y1="286" x2="380" y2="286" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="286" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="286" r="3" fill="#0D9488"/>
+
+  <!-- Key 5: Note G (GPIO 8) -->
+  <rect x="50" y="325" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="344" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 5: Note G</text>
+  <text x="137" y="359" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Perfect 5th</text>
+  <line x1="30" y1="338" x2="50" y2="338" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="338" r="3" fill="#DC2626"/>
+  <line x1="12" y1="352" x2="50" y2="352" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="352" r="3" fill="#1F2937"/>
+  <line x1="225" y1="346" x2="380" y2="346" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="346" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="346" r="3" fill="#0D9488"/>
+
+  <!-- Key 6: Note A (GPIO 9) -->
+  <rect x="50" y="385" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="404" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 6: Note A</text>
+  <text x="137" y="419" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Major 6th</text>
+  <line x1="30" y1="398" x2="50" y2="398" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="398" r="3" fill="#DC2626"/>
+  <line x1="12" y1="412" x2="50" y2="412" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="412" r="3" fill="#1F2937"/>
+  <line x1="225" y1="406" x2="380" y2="406" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="406" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="406" r="3" fill="#0D9488"/>
+
+  <!-- Key 7: Note B (GPIO 10) -->
+  <rect x="50" y="445" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="464" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 7: Note B</text>
+  <text x="137" y="479" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Major 7th</text>
+  <line x1="30" y1="458" x2="50" y2="458" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="458" r="3" fill="#DC2626"/>
+  <line x1="12" y1="472" x2="50" y2="472" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="472" r="3" fill="#1F2937"/>
+  <line x1="225" y1="466" x2="380" y2="466" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="466" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="466" r="3" fill="#0D9488"/>
+
+  <!-- Key 8: Note High C (GPIO 11) -->
+  <rect x="50" y="505" width="175" height="42" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="137" y="524" font-size="12" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">TTP223 - Key 8: High C</text>
+  <text x="137" y="539" font-size="10" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Octave Tonic (8th)</text>
+  <line x1="30" y1="518" x2="50" y2="518" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="518" r="3" fill="#DC2626"/>
+  <line x1="12" y1="532" x2="50" y2="532" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="532" r="3" fill="#1F2937"/>
+  <line x1="225" y1="526" x2="380" y2="526" stroke="#0D9488" stroke-width="2"/>
+  <circle cx="225" cy="526" r="3" fill="#0D9488"/>
+  <circle cx="380" cy="526" r="3" fill="#0D9488"/>
+
+  <!-- ESP32-S3 Microcontroller Block -->
+  <rect x="380" y="70" width="190" height="565" rx="10" fill="#EEEDFE" stroke="#4F46E5" stroke-width="2"/>
+  <text x="475" y="96" font-size="16" text-anchor="middle" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">ESP32-S3 Dev</text>
+  <text x="475" y="114" font-size="11" text-anchor="middle" fill="#4338CA" font-family="Arial, sans-serif">Dual-Core Xtensa LX7</text>
+
+  <!-- Left Pins -->
+  <text x="392" y="110" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 15 (Key 1)</text>
+  <text x="392" y="170" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 16 (Key 2)</text>
+  <text x="392" y="230" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 17 (Key 3)</text>
+  <text x="392" y="290" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 18 (Key 4)</text>
+  <text x="392" y="350" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 8  (Key 5)</text>
+  <text x="392" y="410" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 9  (Key 6)</text>
+  <text x="392" y="470" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 10 (Key 7)</text>
+  <text x="392" y="530" font-size="12" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 11 (Key 8)</text>
+
+  <text x="392" y="575" font-size="12" fill="#DC2626" font-weight="bold" font-family="Arial, sans-serif">3V3 Output</text>
+  <line x1="30" y1="571" x2="380" y2="571" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="30" cy="571" r="3" fill="#DC2626"/>
+  <circle cx="380" cy="571" r="3" fill="#DC2626"/>
+
+  <text x="392" y="605" font-size="12" fill="#1F2937" font-weight="bold" font-family="Arial, sans-serif">GND</text>
+  <line x1="12" y1="601" x2="380" y2="601" stroke="#1F2937" stroke-width="2"/>
+  <circle cx="12" cy="601" r="3" fill="#1F2937"/>
+  <circle cx="380" cy="601" r="3" fill="#1F2937"/>
+
+  <!-- Right Pins (I2S Output & Power) -->
+  <text x="558" y="180" font-size="12" text-anchor="end" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 4 (BCLK)</text>
+  <circle cx="570" cy="176" r="3.5" fill="#4F46E5"/>
+
+  <text x="558" y="235" font-size="12" text-anchor="end" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 5 (LRC)</text>
+  <circle cx="570" cy="231" r="3.5" fill="#4F46E5"/>
+
+  <text x="558" y="290" font-size="12" text-anchor="end" fill="#312E81" font-weight="bold" font-family="Arial, sans-serif">GPIO 6 (DIN)</text>
+  <circle cx="570" cy="286" r="3.5" fill="#4F46E5"/>
+
+  <text x="558" y="345" font-size="12" text-anchor="end" fill="#DC2626" font-weight="bold" font-family="Arial, sans-serif">5V (VBUS)</text>
+  <circle cx="570" cy="341" r="3.5" fill="#DC2626"/>
+
+  <text x="558" y="395" font-size="12" text-anchor="end" fill="#1F2937" font-weight="bold" font-family="Arial, sans-serif">GND</text>
+  <circle cx="570" cy="391" r="3.5" fill="#1F2937"/>
+
+  <!-- MAX98357A Module -->
+  <rect x="730" y="110" width="170" height="340" rx="10" fill="#FFF7ED" stroke="#EA580C" stroke-width="2"/>
+  <text x="815" y="136" font-size="16" text-anchor="middle" fill="#9A3412" font-weight="bold" font-family="Arial, sans-serif">MAX98357A</text>
+  <text x="815" y="154" font-size="11" text-anchor="middle" fill="#C2410C" font-family="Arial, sans-serif">I2S DAC + Class-D Amp</text>
+
+  <!-- Left Inputs of MAX98357A -->
+  <text x="742" y="180" font-size="12" fill="#9A3412" font-family="Arial, sans-serif">BCLK</text>
+  <circle cx="730" cy="176" r="3.5" fill="#EA580C"/>
+  <line x1="570" y1="176" x2="730" y2="176" stroke="#D97706" stroke-width="2"/>
+
+  <text x="742" y="235" font-size="12" fill="#9A3412" font-family="Arial, sans-serif">LRC (WS)</text>
+  <circle cx="730" cy="231" r="3.5" fill="#EA580C"/>
+  <line x1="570" y1="231" x2="730" y2="231" stroke="#D97706" stroke-width="2"/>
+
+  <text x="742" y="290" font-size="12" fill="#9A3412" font-family="Arial, sans-serif">DIN</text>
+  <circle cx="730" cy="286" r="3.5" fill="#EA580C"/>
+  <line x1="570" y1="286" x2="730" y2="286" stroke="#D97706" stroke-width="2"/>
+
+  <text x="742" y="345" font-size="12" fill="#DC2626" font-weight="bold" font-family="Arial, sans-serif">VIN (5V)</text>
+  <circle cx="730" cy="341" r="3.5" fill="#DC2626"/>
+  <line x1="570" y1="341" x2="730" y2="341" stroke="#DC2626" stroke-width="2"/>
+
+  <text x="742" y="395" font-size="12" fill="#1F2937" font-weight="bold" font-family="Arial, sans-serif">GND</text>
+  <circle cx="730" cy="391" r="3.5" fill="#1F2937"/>
+  <line x1="570" y1="391" x2="730" y2="391" stroke="#1F2937" stroke-width="2"/>
+
+  <!-- GAIN & SD Info -->
+  <text x="742" y="425" font-size="11" fill="#4B5563" font-family="Arial, sans-serif">GAIN -> GND (12 dB)</text>
+  <line x1="730" y1="421" x2="710" y2="421" stroke="#1F2937" stroke-width="1.5"/>
+  <line x1="710" y1="421" x2="710" y2="391" stroke="#1F2937" stroke-width="1.5"/>
+  <circle cx="710" cy="391" r="3" fill="#1F2937"/>
+
+  <!-- Decoupling Capacitors -->
+  <line x1="650" y1="341" x2="650" y2="355" stroke="#DC2626" stroke-width="2"/>
+  <line x1="650" y1="375" x2="650" y2="391" stroke="#1F2937" stroke-width="2"/>
+  <line x1="638" y1="355" x2="662" y2="355" stroke="#111827" stroke-width="2.5"/>
+  <line x1="638" y1="375" x2="662" y2="375" stroke="#111827" stroke-width="2.5"/>
+  <circle cx="650" cy="341" r="3" fill="#DC2626"/>
+  <circle cx="650" cy="391" r="3" fill="#1F2937"/>
+  <text x="670" y="368" font-size="10" fill="#4B5563" font-family="Arial, sans-serif">470uF + 0.1uF</text>
+
+  <!-- Right Speaker Outputs -->
+  <text x="888" y="210" font-size="12" text-anchor="end" fill="#9A3412" font-weight="bold" font-family="Arial, sans-serif">SPK+</text>
+  <circle cx="900" cy="206" r="3.5" fill="#EA580C"/>
+
+  <text x="888" y="260" font-size="12" text-anchor="end" fill="#9A3412" font-weight="bold" font-family="Arial, sans-serif">SPK-</text>
+  <circle cx="900" cy="256" r="3.5" fill="#EA580C"/>
+
+  <!-- Speaker -->
+  <rect x="980" y="170" width="115" height="120" rx="8" fill="#F3F4F6" stroke="#4B5563" stroke-width="2"/>
+  <text x="1037" y="210" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold" font-family="Arial, sans-serif">Speaker</text>
+  <text x="1037" y="230" font-size="12" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif">4 &#937; / 3W-4W</text>
+  <text x="1037" y="248" font-size="10" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif">(CS 69 4W)</text>
+
+  <line x1="900" y1="206" x2="980" y2="206" stroke="#111827" stroke-width="2"/>
+  <circle cx="900" cy="206" r="3" fill="#111827"/>
+  <circle cx="980" cy="206" r="3" fill="#111827"/>
+  <text x="965" y="200" font-size="12" font-weight="bold" fill="#DC2626">+</text>
+
+  <line x1="900" y1="256" x2="980" y2="256" stroke="#111827" stroke-width="2"/>
+  <circle cx="900" cy="256" r="3" fill="#111827"/>
+  <circle cx="980" cy="256" r="3" fill="#111827"/>
+  <text x="965" y="250" font-size="12" font-weight="bold" fill="#111827">-</text>
+
+  <!-- Legend Box -->
+  <rect x="730" y="480" width="365" height="155" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="745" y="502" font-size="13" font-weight="bold" fill="#111827" font-family="Arial, sans-serif">Wiring Legend &amp; Hardware Notes</text>
+  <line x1="745" y1="520" x2="780" y2="520" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="790" y="524" font-size="11" fill="#374151" font-family="Arial, sans-serif">Power: 5V (USB/VIN) &amp; 3V3 (Sensors)</text>
+
+  <line x1="745" y1="542" x2="780" y2="542" stroke="#1F2937" stroke-width="2.5"/>
+  <text x="790" y="546" font-size="11" fill="#374151" font-family="Arial, sans-serif">Common Ground (GND)</text>
+
+  <line x1="745" y1="564" x2="780" y2="564" stroke="#0D9488" stroke-width="2.5"/>
+  <text x="790" y="568" font-size="11" fill="#374151" font-family="Arial, sans-serif">Touch Sensor Digital Output (HIGH on touch)</text>
+
+  <line x1="745" y1="586" x2="780" y2="586" stroke="#D97706" stroke-width="2.5"/>
+  <text x="790" y="590" font-size="11" fill="#374151" font-family="Arial, sans-serif">I2S Digital Audio Stream (BCLK, LRC, DIN)</text>
+
+  <text x="745" y="618" font-size="10" fill="#6B7280" font-style="italic" font-family="Arial, sans-serif">* Note: In Mode 1, 8 keys form a standard diatonic octave. (GPIO 7 is free for Mode 2).</text>
+</svg>

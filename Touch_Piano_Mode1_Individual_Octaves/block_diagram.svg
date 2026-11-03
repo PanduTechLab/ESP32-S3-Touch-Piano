@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#4B5563" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="2" y="2" width="916" height="356" rx="12" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="460" y="32" font-size="18" text-anchor="middle" fill="#111827" font-weight="bold" font-family="Arial, sans-serif">ESP32-S3 Touch Piano - Mode 1 System Architecture Block Diagram</text>
+  <text x="460" y="52" font-size="12" text-anchor="middle" fill="#4B5563" font-family="Arial, sans-serif">Single-Octave Firmware with 8 Diatonic Keys (C to High C)</text>
+
+  <!-- 1. Input Stage: Touch Sensors -->
+  <rect x="25" y="80" width="150" height="235" rx="8" fill="#ECFDF5" stroke="#059669" stroke-width="1.8"/>
+  <text x="100" y="115" font-size="15" text-anchor="middle" fill="#065F46" font-weight="bold" font-family="Arial, sans-serif">8 x TTP223</text>
+  <text x="100" y="135" font-size="12" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif">Capacitive Touch</text>
+  <line x1="45" y1="150" x2="155" y2="150" stroke="#A7F3D0" stroke-width="1.5"/>
+  <text x="100" y="175" font-size="11" text-anchor="middle" fill="#065F46" font-family="Arial, sans-serif">Key 1: Note C</text>
+  <text x="100" y="195" font-size="11" text-anchor="middle" fill="#065F46" font-family="Arial, sans-serif">Key 2-7: D,E,F,G,A,B</text>
+  <text x="100" y="215" font-size="11" text-anchor="middle" fill="#065F46" font-family="Arial, sans-serif">Key 8: High C</text>
+  <text x="100" y="260" font-size="10" text-anchor="middle" fill="#059669" font-weight="bold" font-family="Arial, sans-serif">Digital HIGH/LOW</text>
+  <text x="100" y="278" font-size="10" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif">GPIO 15,16,17,18,8,9,10,11</text>
+
+  <!-- Arrow Input -> ESP32 -->
+  <line x1="175" y1="195" x2="215" y2="195" stroke="#4B5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="195" y="185" font-size="10" text-anchor="middle" fill="#059669" font-weight="bold" font-family="Arial, sans-serif">GPIO</text>
+
+  <!-- 2. ESP32-S3 Microcontroller Core Container -->
+  <rect x="220" y="80" width="370" height="235" rx="10" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
+  <text x="405" y="105" font-size="15" text-anchor="middle" fill="#4C1D95" font-weight="bold" font-family="Arial, sans-serif">ESP32-S3 Dual-Core DSP Processing</text>
+
+  <!-- Block A: GPIO Reader & Debouncer -->
+  <rect x="235" y="120" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="315" y="145" font-size="12" text-anchor="middle" fill="#5B21B6" font-weight="bold" font-family="Arial, sans-serif">Debounce Engine</text>
+  <text x="315" y="163" font-size="10" text-anchor="middle" fill="#6D28D9" font-family="Arial, sans-serif">4-Block Filter (~12 ms)</text>
+  <text x="315" y="177" font-size="9" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif">Glitch &amp; chatter rejection</text>
+
+  <!-- Block B: ADSR Envelope Generator -->
+  <rect x="235" y="210" width="160" height="85" rx="6" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="315" y="233" font-size="12" text-anchor="middle" fill="#5B21B6" font-weight="bold" font-family="Arial, sans-serif">Smooth ADSR</text>
+  <text x="315" y="251" font-size="10" text-anchor="middle" fill="#6D28D9" font-family="Arial, sans-serif">Exponential Attack (4ms)</text>
+  <text x="315" y="267" font-size="10" text-anchor="middle" fill="#6D28D9" font-family="Arial, sans-serif">Decay (1.2s) &amp; Release (60ms)</text>
+  <text x="315" y="282" font-size="9" text-anchor="middle" fill="#10B981" font-weight="bold" font-family="Arial, sans-serif">Zero-Click Shaping</text>
+
+  <!-- Internal Arrow A -> B -->
+  <line x1="315" y1="190" x2="315" y2="208" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Block C: Sine Synth + Harmonics -->
+  <rect x="420" y="120" width="155" height="95" rx="6" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="497" y="142" font-size="12" text-anchor="middle" fill="#5B21B6" font-weight="bold" font-family="Arial, sans-serif">8-Voice Polyphony</text>
+  <text x="497" y="160" font-size="10" text-anchor="middle" fill="#6D28D9" font-family="Arial, sans-serif">1024-pt LUT + Lerp</text>
+  <text x="497" y="176" font-size="10" text-anchor="middle" fill="#6D28D9" font-family="Arial, sans-serif">2nd Harmonic (H2)</text>
+  <text x="497" y="193" font-size="9" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif">Fundamental + Tone</text>
+
+  <!-- Block D: Soft Limiter & I2S Output -->
+  <rect x="420" y="230" width="155" height="65" rx="6" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="497" y="252" font-size="12" text-anchor="middle" fill="#5B21B6" font-weight="bold" font-family="Arial, sans-serif">Soft Limiter &amp; I2S</text>
+  <text x="497" y="268" font-size="10" text-anchor="middle" fill="#6D28D9" font-family="Arial, sans-serif">tanhf() Anti-Clipping</text>
+  <text x="497" y="283" font-size="9" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif">44.1 kHz 16-Bit Stereo</text>
+
+  <!-- Internal Arrows inside ESP32 -->
+  <line x1="395" y1="245" x2="418" y2="245" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="497" y1="215" x2="497" y2="228" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrow ESP32 -> MAX98357A -->
+  <line x1="590" y1="262" x2="630" y2="262" stroke="#D97706" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="610" y="250" font-size="10" text-anchor="middle" fill="#D97706" font-weight="bold" font-family="Arial, sans-serif">I2S Bus</text>
+
+  <!-- 3. MAX98357A DAC & Amplifier -->
+  <rect x="635" y="180" width="130" height="135" rx="8" fill="#FFF7ED" stroke="#EA580C" stroke-width="1.8"/>
+  <text x="700" y="210" font-size="14" text-anchor="middle" fill="#9A3412" font-weight="bold" font-family="Arial, sans-serif">MAX98357A</text>
+  <text x="700" y="230" font-size="11" text-anchor="middle" fill="#C2410C" font-family="Arial, sans-serif">I2S DAC + Amp</text>
+  <line x1="650" y1="242" x2="750" y2="242" stroke="#FFEDD5" stroke-width="1.5"/>
+  <text x="700" y="262" font-size="10" text-anchor="middle" fill="#9A3412" font-family="Arial, sans-serif">Class-D Output</text>
+  <text x="700" y="278" font-size="10" text-anchor="middle" fill="#9A3412" font-family="Arial, sans-serif">12 dB Gain (GND)</text>
+  <text x="700" y="295" font-size="9" text-anchor="middle" fill="#16A34A" font-weight="bold" font-family="Arial, sans-serif">3.2W Peak into 4&#937;</text>
+
+  <!-- Arrow MAX98357A -> Speaker -->
+  <line x1="765" y1="247" x2="800" y2="247" stroke="#1F2937" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="782" y="237" font-size="9" text-anchor="middle" fill="#374151" font-weight="bold" font-family="Arial, sans-serif">SPK+/-</text>
+
+  <!-- 4. Speaker -->
+  <rect x="805" y="195" width="95" height="105" rx="8" fill="#F3F4F6" stroke="#4B5563" stroke-width="1.8"/>
+  <text x="852" y="235" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold" font-family="Arial, sans-serif">Speaker</text>
+  <text x="852" y="255" font-size="11" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif">4 &#937; / 3W-4W</text>
+  <text x="852" y="272" font-size="9" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif">(CS 69 4W)</text>
+</svg>
